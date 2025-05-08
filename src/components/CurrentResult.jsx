@@ -1,37 +1,31 @@
-const CurrentResult = ({
-  completedCredits,
-  setcompletedCredits,
-  currentCGPA,
-  setcurrentCGPA,
-  calculatedCGPA,
-}) => {
+const CurrentResult = ({currentStatus, setCurrentStatus}) => {
   return (
     <div className="flex flex-col justify-center gap-2 lg:w-1/2">
       <h1 className="text-2xl text-center p-4 font-semibold bg-[#fff1e0] rounded-lg">
         Current Result:
       </h1>
       <input
-        value={completedCredits}
+        value={currentStatus.currentCredits}
         type="text"
         className="h-14 shadow-md text-center bg-[#fff1e0] rounded-lg"
         placeholder="Enter your completed credits"
         onChange={(e) => {
-          setcompletedCredits(e.target.value);
+          setCurrentStatus((prevState) => {
+            return { ...prevState, currentCredits: e.target.value };
+          });
         }}
       />
       <input
-        value={currentCGPA}
+        value={currentStatus.currentCGPA}
         type="text"
         className="h-14 shadow-md text-center bg-[#fff1e0] rounded-lg"
         placeholder="Enter your current CGPA"
         onChange={(e) => {
-          setcurrentCGPA(e.target.value);
+          setCurrentStatus((prevState) => {
+            return { ...prevState, currentCGPA: e.target.value };
+          });
         }}
       />
-      <h1 className="shadow-md text-center font-medium text-xl p-6 bg-[#fff1e0] rounded-lg">
-        Calculated CGPA:{" "}
-        <span className="text-orange-600">{calculatedCGPA}</span>
-      </h1>
     </div>
   );
 };

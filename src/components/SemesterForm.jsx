@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
+const SemesterForm = ({ setSemesterStatus, setIsModalVisible }) => {
   const [details, setdetails] = useState([
     {
       credit: "",
@@ -34,17 +34,23 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let semCreditSum = Number(completedCredits);
-    let semGPASum = Number(currentCGPA) * Number(completedCredits);
+    
+    let creditsSum = 0;
+    let semesterGPA = 0;
 
     details.forEach((detail) => {
-      semCreditSum += Number(detail.credit);
-      semGPASum += Number(detail.gpa) * Number(detail.credit);
+      creditsSum += Number(detail.credit);
+      semesterGPA += Number(detail.gpa) * Number(detail.credit);
     });
 
-    let semCgpa = semGPASum / semCreditSum;
-    console.log(semCgpa, typeof semCgpa);
-    setCalculatedCGPA(semCgpa.toFixed(2));
+    console.log("creditsSum: ", creditsSum);
+    console.log("semesterGPA: ", semesterGPA);
+
+    if (creditsSum > 0) semesterGPA /= creditsSum;
+    else semesterGPA = 0;
+
+    setSemesterStatus({semesterCredits: creditsSum.toString(), semesterGPA: semesterGPA.toString()});
+    setIsModalVisible(prevState => !prevState);
   };
 
   return (
