@@ -13,7 +13,7 @@ function App() {
       <NavBar />
 
       <main className="flex flex-col p-6 lg:items-center lg:justify-center">
-        <div className="flex flex-col bg-[#fad6aa] items-center min-h-[33rem]  shadow-md lg:justify-center lg:w-4/5">
+        <div className="flex flex-col bg-[#fad6aa] items-center min-h-[37rem]  shadow-md lg:justify-center lg:w-4/5">
           <div className="flex flex-col gap-8 w-full p-6 lg:flex-row">
             <CurrentResult
               calculatedCGPA={calculatedCGPA}

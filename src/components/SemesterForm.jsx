@@ -18,6 +18,10 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
       credit: "",
       gpa: "",
     },
+    {
+      credit: "",
+      gpa: "",
+    },
   ]);
 
   const handleAdd = () => {
@@ -71,11 +75,10 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
               <option value="2">2.00</option>
               <option value="3">3.00</option>
             </select>
-            <input
+
+            <select
               value={detail.gpa}
-              type="text"
               className="border h-12 w-1/4 text-center bg-[#fff1e0]"
-              placeholder="GPA"
               onChange={(e) => {
                 const updateddetails = [...details];
                 updateddetails[index] = {
@@ -84,7 +87,17 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
                 };
                 setdetails(updateddetails);
               }}
-            />
+            >
+              <option value="default">GPA</option>
+              <option value="4">A (4.00)</option>
+              <option value="3.67">B+ (3.67)</option>
+              <option value="3.33">B (3.33)</option>
+              <option value="3.00">B- (3.00)</option>
+              <option value="2.67">C+ (2.67)</option>
+              <option value="2.33">C (2.33)</option>
+              <option value="2.00">C- (2.00)</option>
+              <option value="0">F (4.00)</option>
+            </select>
           </div>
         );
       })}
