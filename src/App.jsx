@@ -12,8 +12,8 @@ function App() {
     <div className="min-h-dvh max-h-full w-full bg-[#fff1e0]">
       <NavBar />
 
-      <main className="flex flex-col p-6 lg:items-center lg:justify-center">
-        <div className="flex flex-col bg-[#fad6aa] items-center min-h-[37rem]  shadow-md lg:justify-center lg:w-4/5">
+      <main className="flex flex-col p-6 lg:items-center">
+        <div className="flex flex-col bg-[#fad6aa] rounded-2xl items-center min-h-[37rem] shadow-md lg:w-4/5 lg:mt-16">
           <div className="flex flex-col gap-8 w-full p-6 lg:flex-row">
             <CurrentResult
               calculatedCGPA={calculatedCGPA}
