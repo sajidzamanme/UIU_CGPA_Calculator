@@ -37,9 +37,6 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
     let semCreditSum = Number(completedCredits);
     let semGPASum = Number(currentCGPA) * Number(completedCredits);
 
-    console.log(semCreditSum, typeof semCreditSum);
-    console.log(semGPASum, typeof semGPASum);
-
     details.forEach((detail) => {
       semCreditSum += Number(detail.credit);
       semGPASum += Number(detail.gpa) * Number(detail.credit);
@@ -57,10 +54,13 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
     >
       {details.map((detail, index) => {
         return (
-          <div key={index} className="flex flex-row gap-4 w-full">
+          <div
+            key={index}
+            className="flex flex-row gap-1 w-full md:gap-2 xl:gap-4"
+          >
             <select
               value={detail.credit}
-              className="border h-12 w-3/4 text-center bg-[#fff1e0]"
+              className="border h-12 w-3/4 text-center bg-[#fff1e0] rounded-lg"
               onChange={(e) => {
                 const updateddetails = [...details];
                 updateddetails[index] = {
@@ -78,7 +78,7 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
 
             <select
               value={detail.gpa}
-              className="border h-12 w-1/4 text-center bg-[#fff1e0]"
+              className="border h-12 w-1/4 text-center bg-[#fff1e0] rounded-lg"
               onChange={(e) => {
                 const updateddetails = [...details];
                 updateddetails[index] = {
@@ -90,12 +90,15 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
             >
               <option value="default">GPA</option>
               <option value="4">A (4.00)</option>
-              <option value="3.67">B+ (3.67)</option>
-              <option value="3.33">B (3.33)</option>
-              <option value="3.00">B- (3.00)</option>
-              <option value="2.67">C+ (2.67)</option>
-              <option value="2.33">C (2.33)</option>
-              <option value="2.00">C- (2.00)</option>
+              <option value="3.67">A- (3.67)</option>
+              <option value="3.33">B+ (3.33)</option>
+              <option value="3.00">B (3.00)</option>
+              <option value="2.67">B- (2.67)</option>
+              <option value="2.33">C+ (2.33)</option>
+              <option value="2.00">C (2.00)</option>
+              <option value="1.67">C- (1.67)</option>
+              <option value="1.33">D+ (1.33)</option>
+              <option value="1.00">D (1.00)</option>
               <option value="0">F (4.00)</option>
             </select>
           </div>
@@ -106,7 +109,7 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
         <button
           type="button"
           onClick={handleAdd}
-          className="flex flex-row justify-center items-center text-4xl h-12 border w-full bg-[#fff1e0]"
+          className="flex flex-row justify-center items-center text-4xl h-12 border w-full bg-[#fff1e0] rounded-lg"
         >
           +
         </button>
@@ -114,7 +117,7 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
         <button
           type="button"
           onClick={handleRemove}
-          className="flex flex-row justify-center items-center text-4xl h-12 border w-full bg-[#fff1e0]"
+          className="flex flex-row justify-center items-center text-4xl h-12 border w-full bg-[#fff1e0] rounded-lg"
         >
           -
         </button>
@@ -122,7 +125,7 @@ const SemesterForm = ({ completedCredits, currentCGPA, setCalculatedCGPA }) => {
 
       <button
         type="submit"
-        className="flex flex-row justify-center items-center text-xl font-medium h-12 border w-full bg-[#fff1e0]"
+        className="flex flex-row justify-center items-center text-xl font-medium h-12 border w-full bg-[#fff1e0] rounded-lg"
       >
         Calculate
       </button>
