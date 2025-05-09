@@ -18,7 +18,7 @@ const Modal = ({ currentStatus, semesterStatus, setIsModalVisible }) => {
       : 0;
 
   return (
-    <div className="fixed top-0 left-0 flex flex-row justify-center items-center h-dvh w-full z-50">
+    <div className="fixed top-0 left-0 flex flex-row justify-center items-center h-screen w-full z-50">
       <div
         onClick={closeModal}
         className="fixed z-0 bg-black opacity-60 h-dvh w-full"

@@ -43,9 +43,6 @@ const SemesterForm = ({ setSemesterStatus, setIsModalVisible }) => {
       semesterGPA += Number(detail.gpa) * Number(detail.credit);
     });
 
-    console.log("creditsSum: ", creditsSum);
-    console.log("semesterGPA: ", semesterGPA);
-
     if (creditsSum > 0) semesterGPA /= creditsSum;
     else semesterGPA = 0;
 
