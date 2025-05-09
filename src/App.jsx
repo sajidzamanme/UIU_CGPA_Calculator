@@ -13,7 +13,11 @@ function App() {
     semesterCredits: "",
     semesterGPA: "",
   });
-  const [calculatedCGPA, setCalculatedCGPA] = useState("");
+  const [retakeStatus, setRetakeStatus] = useState({
+    retakeCredits: "",
+    previousGPA: "",
+    retakeGPA: "",
+  });
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
@@ -29,13 +33,13 @@ function App() {
               
               <div className="w-full h-[3px] bg-orange-400 lg:hidden"></div>
               
-              <SemesterToCalc setSemesterStatus={setSemesterStatus} setIsModalVisible={setIsModalVisible} />
+              <SemesterToCalc setSemesterStatus={setSemesterStatus} setRetakeStatus={setRetakeStatus} setIsModalVisible={setIsModalVisible} />
             
             </div>
           </div>
         </main>
 
-        {isModalVisible && <Modal currentStatus={currentStatus} semesterStatus={semesterStatus} setIsModalVisible={setIsModalVisible} />}
+        {isModalVisible && <Modal currentStatus={currentStatus} retakeStatus={retakeStatus} semesterStatus={semesterStatus} setIsModalVisible={setIsModalVisible} />}
       </div>
     </>
   );

@@ -1,20 +1,33 @@
-const Modal = ({ currentStatus, semesterStatus, setIsModalVisible }) => {
+const Modal = ({
+  currentStatus,
+  retakeStatus,
+  semesterStatus,
+  setIsModalVisible,
+}) => {
   const closeModal = () => {
     setIsModalVisible((prevState) => !prevState);
   };
 
-  const totalCredit =
-    Number(currentStatus.currentCredits) +
-    Number(semesterStatus.semesterCredits);
+  const retakeCredits = Number(retakeStatus.retakeCredits);
+  const retakePreviousGPA = Number(retakeStatus.previousGPA);
+  const retakeGPA = Number(retakeStatus.retakeGPA);
+
+  const currentCredits = Number(currentStatus.currentCredits);
+  const currentCGPA = Number(currentStatus.currentCGPA);
+  const currentTotal =
+    currentCGPA * currentCredits -
+    retakeCredits * retakePreviousGPA +
+    retakeCredits * retakeGPA;
+
+  const semesterCredits = Number(semesterStatus.semesterCredits);
+  const semesterGPA = Number(semesterStatus.semesterGPA);
+  const semesterTotal = semesterCredits * semesterGPA;
+
+  const totalCredit = currentCredits + semesterCredits;
+
   const CGPA =
     totalCredit > 0
-      ? (
-          (Number(semesterStatus.semesterCredits) *
-            Number(semesterStatus.semesterGPA) +
-            Number(currentStatus.currentCGPA) *
-              Number(currentStatus.currentCredits)) /
-          totalCredit
-        ).toFixed(2)
+      ? ((semesterTotal + currentTotal) / totalCredit).toFixed(2)
       : 0;
 
   return (
@@ -29,11 +42,24 @@ const Modal = ({ currentStatus, semesterStatus, setIsModalVisible }) => {
         </h1>
         <div className="flex flex-col">
           <h1 className="text-orange-500 font-medium">
-            Total Semester Credits: {semesterStatus.semesterCredits}
+            Semester Credits: {semesterCredits}
           </h1>
           <h1 className="text-orange-500 font-medium">
-            Semester GPA: {semesterStatus.semesterGPA}
+            Semester GPA: {semesterGPA.toFixed(2)}
           </h1>
+          {retakeCredits > 0 && (
+            <div>
+              <h1 className="text-orange-500 font-medium">
+                Retake Credits: {retakeCredits}
+              </h1>
+              <h1 className="text-orange-500 font-medium">
+                Semester GPA (with Retake):{" "}
+                {((semesterGPA * semesterCredits +
+                  retakeGPA * retakeCredits) /
+                  (semesterCredits + retakeCredits)).toFixed(2)}
+              </h1>
+            </div>
+          )}
           <h1 className="text-orange-500 font-medium">
             Total Completed Credits: {totalCredit}
           </h1>
