@@ -209,7 +209,7 @@ const SemesterForm = ({
               <option value="1.67">C- (1.67)</option>
               <option value="1.33">D+ (1.33)</option>
               <option value="1.00">D (1.00)</option>
-              <option value="0">F (4.00)</option>
+              <option value="0">F (0.00)</option>
             </select>
 
             <select
@@ -235,7 +235,7 @@ const SemesterForm = ({
               <option value="1.67">C- (1.67)</option>
               <option value="1.33">D+ (1.33)</option>
               <option value="1.00">D (1.00)</option>
-              <option value="0">F (4.00)</option>
+              <option value="0">F (0.00)</option>
             </select>
 
             <button
