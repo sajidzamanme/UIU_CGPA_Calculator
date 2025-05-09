@@ -18,12 +18,12 @@ const Modal = ({ currentStatus, semesterStatus, setIsModalVisible }) => {
       : 0;
 
   return (
-    <div className="absolute top-0 left-0 flex flex-row justify-center items-center h-dvh w-full z-50">
+    <div className="fixed top-0 left-0 flex flex-row justify-center items-center h-dvh w-full z-50">
       <div
         onClick={closeModal}
         className="fixed z-0 bg-black opacity-60 h-full w-full"
       ></div>
-      <div className="z-10 flex flex-col gap-2 bg-white p-6 rounded-lg shadow-lg w-3/4 xl:w-1/3">
+      <div className="z-10 flex flex-col gap-2 bg-[#fde9de] p-6 rounded-lg shadow-lg w-3/4 xl:w-1/3">
         <h1 className="text-center text-2xl font-semibold text-orange-500">
           Summary:
         </h1>
