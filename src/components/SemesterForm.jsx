@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoTrash } from "react-icons/io5";
 
 const SemesterForm = ({
   setSemesterStatus,
@@ -156,7 +157,7 @@ const SemesterForm = ({
               onClick={() => handleRemove(index)}
               className="w-[5%] text-[1.2rem] font-medium text-[#f10000]"
             >
-              X
+              <IoTrash />
             </button>
           </div>
         );
@@ -243,7 +244,7 @@ const SemesterForm = ({
               onClick={() => handleRemoveRetake(index)}
               className="w-[5%] text-[1.2rem] font-medium text-[#f10000]"
             >
-              X
+              <IoTrash />
             </button>
           </div>
         );
