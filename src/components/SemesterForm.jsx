@@ -41,12 +41,16 @@ const SemesterForm = ({
     ]);
   };
 
-  const handleRemove = () => {
-    setDetails((prevState) => prevState.slice(0, -1));
+  const handleRemove = (pos) => {
+    setDetails((prevState) => prevState.filter((_, index) => {
+      return index !== pos;
+    }));
   };
 
-  const handleRemoveRetake = () => {
-    setRetakes((prevState) => prevState.slice(0, -1));
+  const handleRemoveRetake = (pos) => {
+    setRetakes((prevState) => prevState.filter((_, index) => {
+      return index !== pos;
+    }));
   };
 
   const handleSubmit = (event) => {
@@ -149,7 +153,7 @@ const SemesterForm = ({
 
             <button
               type="button"
-              onClick={handleRemove}
+              onClick={() => handleRemove(index)}
               className="w-[5%] text-[1.2rem] font-medium text-[#f10000]"
             >
               X
@@ -236,7 +240,7 @@ const SemesterForm = ({
 
             <button
               type="button"
-              onClick={handleRemoveRetake}
+              onClick={() => handleRemoveRetake(index)}
               className="w-[5%] text-[1.2rem] font-medium text-[#f10000]"
             >
               X
