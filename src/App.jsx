@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import { useState } from "react";
 import SemesterToCalc from "./components/SemesterToCalc";
 import NavBar from "./components/NavBar";
