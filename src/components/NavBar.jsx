@@ -1,6 +1,6 @@
 const NavBar = () => {
   return (
-    <nav className="bg-orange-100 shadow-md">
+    <nav className="bg-[#fad6aa] shadow-md">
       <div className="flex flex-row justify-between items-center container 
       mx-auto">
         <h1 className="flex flex-row items-center text-[1.2rem] text-orange-500 
