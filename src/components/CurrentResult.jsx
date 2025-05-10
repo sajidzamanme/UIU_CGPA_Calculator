@@ -13,7 +13,7 @@ const CurrentResult = ({ currentStatus, setCurrentStatus, isValidCurrentCGPA, se
   
   return (
     <div className="flex flex-col justify-center gap-2 lg:w-1/2">
-      <h1 className="text-2xl text-center p-4 font-semibold bg-[#fff1e0] rounded-lg">
+      <h1 className="text-2xl text-center p-4 font-semibold bg-[#fff1e0] rounded-lg shadow-md">
         Current Result:
       </h1>
       <input

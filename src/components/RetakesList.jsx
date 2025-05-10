@@ -15,11 +15,11 @@ const RetakesList = ({retakes, setRetakes}) => {
         return (
           <div
             key={index}
-            className="flex flex-row gap-1 w-full md:gap-2 xl:gap-4"
+            className="flex flex-row gap-1.5 w-full md:gap-2.5 xl:gap-4.5"
           >
             <select
               value={retake.credit}
-              className="border h-12 w-[51%] text-center bg-[#fff1e0] rounded-lg"
+              className="h-12 w-[51%] text-center bg-[#fff1e0] rounded-lg hover:bg-[#fff6ec]"
               onChange={(e) => {
                 const updatedRetakes = [...retakes];
                 updatedRetakes[index] = {
@@ -38,7 +38,7 @@ const RetakesList = ({retakes, setRetakes}) => {
 
             <select
               value={retake.prevgpa}
-              className="border h-12 w-[22%] text-center bg-[#fff1e0] rounded-lg"
+              className="h-12 w-[22%] text-center bg-[#fff1e0] rounded-lg hover:bg-[#fff6ec]"
               onChange={(e) => {
                 const updatedRetakes = [...retakes];
                 updatedRetakes[index] = {
@@ -65,7 +65,7 @@ const RetakesList = ({retakes, setRetakes}) => {
 
             <select
               value={retake.newgpa}
-              className="border h-12 w-[22%] text-center bg-[#fff1e0] rounded-lg"
+              className="h-12 w-[22%] text-center bg-[#fff1e0] rounded-lg hover:bg-[#fff6ec]"
               onChange={(e) => {
                 const updatedRetakes = [...retakes];
                 updatedRetakes[index] = {

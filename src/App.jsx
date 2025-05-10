@@ -26,9 +26,9 @@ function App() {
       <div className="relative min-h-dvh max-h-full w-full bg-[#fff1e0]">
         <NavBar />
 
-        <main className="flex flex-col p-6 z-20 lg:items-center">
-          <div className="flex flex-col bg-[#fad6aa] rounded-2xl items-center min-h-[37rem] shadow-md lg:w-4/5 lg:mt-16">
-            <div className="flex flex-col gap-8 w-full p-6 lg:flex-row">
+        <main className="flex flex-col h-full p-6 z-20 lg:items-center">
+          <div className="flex flex-col h-full bg-[#fad6aa] rounded-2xl items-center min-h-[37rem] shadow-md lg:w-4/5 lg:mt-16">
+            <div id="target" className="flex flex-col flex-grow h-full gap-8 w-full p-6 lg:flex-row">
               <CurrentResult
                 currentStatus={currentStatus}
                 setCurrentStatus={setCurrentStatus}

@@ -15,11 +15,11 @@ const DetailsList = ({ details, setDetails }) => {
         return (
           <div
             key={index}
-            className="flex flex-row gap-1 w-full md:gap-2 xl:gap-4"
+            className="flex flex-row gap-1.5 w-full md:gap-2.5 xl:gap-4.5"
           >
             <select
               value={detail.credit}
-              className="border h-12 w-[73%] text-center bg-[#fff1e0] rounded-lg"
+              className="h-12 w-[73%] text-center bg-[#fff1e0] rounded-lg hover:bg-[#fff6ec]"
               onChange={(e) => {
                 const updatedDetails = [...details];
                 updatedDetails[index] = {
@@ -38,7 +38,7 @@ const DetailsList = ({ details, setDetails }) => {
 
             <select
               value={detail.gpa}
-              className="border h-12 w-[22%] text-center bg-[#fff1e0] rounded-lg"
+              className="h-12 w-[22%] text-center bg-[#fff1e0] rounded-lg hover:bg-[#fff6ec]"
               onChange={(e) => {
                 const updatedDetails = [...details];
                 updatedDetails[index] = {

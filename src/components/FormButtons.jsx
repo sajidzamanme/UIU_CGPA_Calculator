@@ -5,7 +5,7 @@ const FormButtons = ({handleAdd, handleRetake}) => {
         <button
           type="button"
           onClick={handleAdd}
-          className="flex flex-row justify-center items-center text-4xl h-12 border w-full bg-[#fff1e0] rounded-lg"
+          className="flex flex-row justify-center items-center text-4xl h-12 w-full bg-[#fff1e0] rounded-lg shadow-md hover:bg-[#fff6ec]"
         >
           +
         </button>
@@ -13,7 +13,7 @@ const FormButtons = ({handleAdd, handleRetake}) => {
         <button
           type="button"
           onClick={handleRetake}
-          className="flex flex-row justify-center items-center text-[1.2rem] h-12 border w-full font-medium bg-[#fff1e0] rounded-lg"
+          className="flex flex-row justify-center items-center text-[1.2rem] h-12 w-full font-medium bg-[#fff1e0] rounded-lg shadow-md hover:bg-[#fff6ec]"
         >
           Add Retake
         </button>
@@ -21,7 +21,7 @@ const FormButtons = ({handleAdd, handleRetake}) => {
 
       <button
         type="submit"
-        className="flex flex-row justify-center items-center text-xl font-medium h-12 border w-full bg-[#fff1e0] rounded-lg"
+        className="flex flex-row justify-center items-center text-xl font-medium h-12 w-full bg-[#fff1e0] rounded-lg shadow-md hover:bg-[#fff6ec]"
       >
         Calculate
       </button>
