@@ -3,6 +3,7 @@ import SemesterToCalc from "./components/SemesterToCalc";
 import NavBar from "./components/NavBar";
 import CurrentResult from "./components/CurrentResult";
 import Modal from "./components/Modal";
+import Footer from "./components/Footer";
 
 function App() {
   const [currentStatus, setCurrentStatus] = useState({
@@ -23,12 +24,15 @@ function App() {
 
   return (
     <>
-      <div className="relative min-h-dvh max-h-full w-full bg-[#fff1e0]">
+      <div className="relative flex flex-col justify-between min-h-dvh max-h-full w-full bg-[#fff1e0]">
         <NavBar />
 
         <main className="flex flex-col h-full p-6 z-20 lg:items-center">
-          <div className="flex flex-col h-full bg-[#fad6aa] rounded-2xl items-center min-h-[37rem] shadow-md lg:w-4/5 lg:mt-16">
-            <div id="target" className="flex flex-col flex-grow h-full gap-8 w-full p-6 lg:flex-row">
+          <div className="flex flex-col h-full bg-[#fad6aa] rounded-2xl items-center min-h-[37rem] shadow-md lg:w-4/5">
+            <div
+              id="target"
+              className="flex flex-col flex-grow h-full gap-8 w-full p-6 lg:flex-row"
+            >
               <CurrentResult
                 currentStatus={currentStatus}
                 setCurrentStatus={setCurrentStatus}
@@ -56,6 +60,8 @@ function App() {
             isValidCurrentCGPA={isValidCurrentCGPA}
           />
         )}
+
+        <Footer />
       </div>
     </>
   );
