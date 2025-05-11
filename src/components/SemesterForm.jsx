@@ -68,7 +68,7 @@ const SemesterForm = ({
     let newGPA = 0;
 
     retakes.forEach((retake) => {
-      if (retake.prevGPA < retake.newGPA) {
+      if (retake.prevgpa < retake.newgpa) {
         retakeCreditsSum += Number(retake.credit);
         prevGPA += Number(retake.prevgpa) * Number(retake.credit);
         newGPA += Number(retake.newgpa) * Number(retake.credit);
