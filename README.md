@@ -1,8 +1,8 @@
 # UIU CGPA CALCULATOR
 
-The name says it all.
+A simple name that says it all.
 
-Made it as a practice project because the one I was using has stopped working.
+Built as a personal project when the website I relied on stopped working.
 
 # Used Technologies
 
