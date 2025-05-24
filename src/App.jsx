@@ -27,7 +27,7 @@ function App() {
       <div className="relative flex flex-col justify-between min-h-dvh max-h-full w-full bg-[#fff1e0]">
         <NavBar />
 
-        <main className="flex flex-col h-full p-6 z-20 lg:items-center">
+        <main className="container mx-auto flex flex-col h-full p-6 z-20 lg:items-center">
           <div className="flex flex-col h-full bg-[#fad6aa] rounded-2xl items-center min-h-[37rem] shadow-md lg:w-4/5">
             <div
               id="target"
